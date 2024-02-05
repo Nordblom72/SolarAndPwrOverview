@@ -15,14 +15,14 @@ The picture says it all :-)
 
 ## Applications/Services 
 
-### 1) MODBUS aplication for collecting solar power data
+### 1) MODBUS application for collecting solar power data
 The company (Svea Solar) that installed the solar panels refused to share an API key to the fusion solar service for fetching the production data as they had no more keys to share. It would have been the most smooth solution. They also refused to grant me installer rights so that I might enable the modbus on the PV dongle. But, they did enable it for me. That done, this app was born for fetching power values by periodically reading two registers from the convereter and storing them in the MongoDb database.<br/>
 ToDo: Add link to the github repo for this app!
 
 ### 2) MQTT client collecting power data to/from the grid
-This is an MQTT client listening to messages sent from the P1Ib power meter. MQTT on P1IB device is disabled by default, so one needs to go to settings and configure it. Check out the two links below for more info on the P1IB device. 
-[Link to P1IB github repo](https://github.com/remne/p1ib)
-[Link to Remnetech, the offical site of P1IB](https://remne.tech/)
+This is an MQTT client listening to messages sent from the P1IB power meter. MQTT on P1IB device is disabled by default, so one needs to go to settings and configure it. Check out the two links below for more info on the P1IB device. <br/>
+[Link to P1IB github repo](https://github.com/remne/p1ib)<br/>
+[Link to Remnetech, the offical site of P1IB](https://remne.tech/)<br/>
 
 ToDo: Add link to the github repo for this app!
 
@@ -53,7 +53,8 @@ Here are the steps to get it running on a Rapsberry Pi:
     sudo service mosquitto restart
 
 ```
-Obviously, the publisher is the P1BL device and the subscriber is the MQTT client. [This is the reference site I used for installing the mqtt broker](https://cedalo.com/blog/mqtt-broker-raspberry-pi-installation-guide/)
+Obviously, the publisher is the P1BL device and the subscriber is the MQTT client.<br/>
+[This is the reference site I used for installing the mqtt broker](https://cedalo.com/blog/mqtt-broker-raspberry-pi-installation-guide/)
 
 ### 4 Electricity spot prices service
 
@@ -66,7 +67,7 @@ Obviously, the publisher is the P1BL device and the subscriber is the MQTT clien
 ### Solar Power Converter: Huawei SUN2000 series
 
 ### Power Meter: P1LB
-[Link to P1IB github repo](https://github.com/remne/p1ib)
+[Link to P1IB github repo](https://github.com/remne/p1ib)<br/>
 [Link to Remnetech, the offical site of P1IB](https://remne.tech/)
 
 ### Raspberry Pi
@@ -99,7 +100,7 @@ Install Java JDK 11. Don't really remember if it is a prereq, but it might be go
 
 Optionally, install Docker. Not used in the project yet...
 ```
- curl -fsSL https://get.docker.com -o get-docker.sh
+  curl -fsSL https://get.docker.com -o get-docker.sh
   sudo sh get-docker.sh
   sudo docker info
   sudo docker run hello-world
