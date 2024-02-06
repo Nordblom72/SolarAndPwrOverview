@@ -56,7 +56,7 @@ Obviously, the publisher is the P1BL device and the subscriber is the MQTT clien
 [This is the reference site I used for installing the mqtt broker](https://cedalo.com/blog/mqtt-broker-raspberry-pi-installation-guide/)
 
 ### 4) Electricity spot prices service
-Didn't find any sites that offered any kind of free-plan accounts for getting the spot prices for electricity. So, had to hack one. The spot prices (day-ahead prices) are normally available at ENTSO-E, the European Network of Transmission System Operators. They provide an API free of charge. But, the day-ahead prices come in EUR/MWh. Found a site that provides an API for exchange rates. That sate has a free-plan that was sufficient for this project. The converted hourly prices go to the MongoDb database.
+Didn't find any sites that offered any kind of free-plan accounts for getting the spot prices for electricity. So, had to hack one. The spot prices (day-ahead prices) are normally available at ENTSO-E, the European Network of Transmission System Operators. They provide an API free of charge. But, the day-ahead prices come in EUR/MWh. Found a site that provides an API for exchange rates. That site provides a free-plan that is sufficient for this project. The converted hourly prices go to the MongoDb database.
 
 ToDo: Add link to the github repo for this service!
 
