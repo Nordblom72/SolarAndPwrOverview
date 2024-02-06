@@ -17,16 +17,15 @@ The picture says it all :-)
 
 ### 1) MODBUS application for collecting solar power data
 The company (Svea Solar) that installed the solar panels refused to share an API key to the fusion solar service for fetching the production data as they had no more keys to share. It would have been the most smooth solution. They also refused to grant me installer rights so that I might enable the modbus on the PV dongle. But, they did enable it for me. That done, this app was born for fetching power values by periodically reading two registers from the convereter and storing them in the MongoDb database.<br/>
-ToDo: Add link to the github repo for this app!
+
+ToDo: Add link to the github repo for this service!
 
 ### 2) MQTT client collecting power data to/from the grid
-This is an MQTT client listening to messages sent from the P1IB power meter. MQTT on P1IB device is disabled by default, so one needs to go to settings and configure it. Check out the two links below for more info on the P1IB device. <br/>
-[Link to P1IB github repo](https://github.com/remne/p1ib)<br/>
-[Link to Remnetech, the offical site of P1IB](https://remne.tech/)<br/>
+This is the MQTT client listening to messages sent from the P1IB power meter. The service saves the monitored data to the MonogDb database. The save periodicy is by default every 5th minute, but is configurable.
 
-ToDo: Add link to the github repo for this app!
+ToDo: Add link to the github repo for this service!
 
-### 3) MGTT broker/bus on the LAN
+### 3) MGTT broker/bus on LAN
 Installed Mosquitto MQTT broker on Raspberry Pi, which is an open source and lightweight message broker implementing MQTT protocol. To read more about it, [go to mosquitto.org](https://mosquitto.org/)
 Here are the steps to get it running on a Rapsberry Pi:
 ```
@@ -56,19 +55,30 @@ Here are the steps to get it running on a Rapsberry Pi:
 Obviously, the publisher is the P1BL device and the subscriber is the MQTT client.<br/>
 [This is the reference site I used for installing the mqtt broker](https://cedalo.com/blog/mqtt-broker-raspberry-pi-installation-guide/)
 
-### 4 Electricity spot prices service
+### 4) Electricity spot prices service
+Didn't find any sites that offered any kind of free-plan accounts for getting the spot prices for electricity. So, had to hack one. The spot prices (day-ahead prices) are normally available at ENTSO-E, the European Network of Transmission System Operators. They provide an API free of charge. But, the day-ahead prices come in EUR/MWh. Found a site that provides an API for exchange rates. That sate has a free-plan that was sufficient for this project. The converted hourly prices go to the MongoDb database.
 
-### 5 MongoDb API service
+ToDo: Add link to the github repo for this service!
 
-### 6 A web client presenting dashboards
+### 5) MongoDb API service
+This is just a simple API service towards the MongoDb database. Manly to be used by the Web service.
+
+ToDo: Add link to the github repo for this service!
+
+### 6) A web client presenting dashboards
+This is the web service for presenting a dashboard with some key values and hopefully some nice graphs.
+
+ToDo: Add link to the github repo for this service!
 
 ## Hardware
 
-### Solar Power Converter: Huawei SUN2000 series
+### Solar Power Inverter: Huawei SUN2000 series
+The solar power Inverter in this project is: Huawei SUN2000-8KLM, thus the modbus client in this project is tailored for the Huawei SUN2000 series only.
+
 
 ### Power Meter: P1LB
-[Link to P1IB github repo](https://github.com/remne/p1ib)<br/>
-[Link to Remnetech, the offical site of P1IB](https://remne.tech/)
+MQTT on P1IB device is disabled by default, so one needs to go to the settings and configure it. Check out the two links below for more info on the P1IB device. <br/>
+[Link to P1IB github repo](https://github.com/remne/p1ib)<br/> [Link to Remnetech, the offical site of P1IB](https://remne.tech/)<br/>
 
 ### Raspberry Pi
 The Raspberry Pi used in this project is version 1, model B (I think). Since it is a relic, it is running desktopless.
