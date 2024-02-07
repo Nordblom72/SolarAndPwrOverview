@@ -15,15 +15,15 @@ The picture says it all :-)
 
 ## Applications/Services 
 
-### 1) MODBUS application for collecting solar power data
-The company (Svea Solar) that installed the solar panels refused to share an API key to the fusion solar service for fetching the production data as they had no more keys to share. It would have been the most smooth solution. They also refused to grant me installer rights so that I might enable the modbus on the PV dongle. But, they did enable it for me. That done, this app was born for fetching power values by periodically reading two registers from the convereter and storing them in the MongoDb database.<br/>
+### 1) MODBUS service for collecting solar power data
+The company that installed the solar panels refused to share an API key to the fusion solar service for fetching the production data as they had no more keys to share. It would have been the most smooth solution. They also refused to grant me installer rights so that I might enable the modbus on the PV dongle. Luckily, they did enable it for me. That done, this service was born for fetching power values by periodically reading two registers from the inverter and storing them in the MongoDb database.<br/>
 
-ToDo: Add link to the github repo for this service!
+[Link to repo](https://github.com/Nordblom72/SUN2000-PV-modbus)
 
 ### 2) MQTT client collecting power data to/from the grid
 This is the MQTT client listening to messages sent from the P1IB power meter. The service saves the monitored data to the MonogDb database. The save periodicy is by default every 5th minute, but is configurable.
 
-ToDo: Add link to the github repo for this service!
+[Link to repo](https://github.com/Nordblom72/mqtt-mongodb)
 
 ### 3) MGTT broker/bus on LAN
 Installed Mosquitto MQTT broker on Raspberry Pi, which is an open source and lightweight message broker implementing MQTT protocol. To read more about it, [go to mosquitto.org](https://mosquitto.org/)
