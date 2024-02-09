@@ -7,7 +7,7 @@ MongoDb serves as the database for the whole project. Currently, running on a fr
 Some of the applications are hosted on yet another free-plan account by Netlify Cloud Services. While a few other applications are running on a Raspberry Pi. Mostly becasue these need to be within close proximity to the power sensors that are harvesting the realtime data.<br/>
 
 ## Prerequisite
-All services are written in Javascript, so nodejs is a most. We also need an MQTT message broker on the LAN. See the HW chapter below as it also describes how to get started with raspberry Pi.
+All services are written in Javascript, so nodejs is a must. We also need an MQTT message broker on the LAN. See the HW chapter below as it also describes how to get started with raspberry Pi.
 
 ## Overview
 The picture says it all :-)
@@ -73,7 +73,7 @@ ToDo: Add link to the github repo for this service!
 ## Hardware
 
 ### Solar Power Inverter: Huawei SUN2000 series
-The solar power Inverter in this project is: Huawei SUN2000-8KLM, thus the modbus client in this project is tailored for the Huawei SUN2000 series only.
+The solar power Inverter in this project is: Huawei SUN2000-8KL, thus the modbus client in this project is tailored for the Huawei SUN2000 series only.
 
 
 ### Power Meter: P1LB
