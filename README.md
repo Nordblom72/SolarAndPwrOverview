@@ -7,7 +7,7 @@ MongoDb serves as the database for the whole project. Currently, running on a fr
 Some of the applications are hosted on yet another free-plan account by Netlify Cloud Services. While a few other applications are running on a Raspberry Pi. Mostly becasue these need to be within close proximity to the power sensors that are harvesting the realtime data.<br/>
 
 ## Prerequisite
-All services are written in Javascript, so nodejs is a must. We also need an MQTT message broker on the LAN. See the HW chapter below as it also describes how to get started with raspberry Pi.
+All services are written in Javascript, so nodejs is a must. The P1LB device that is used for reading power data from the power meter uses MQTT protocol as communication interface. Thus, an MQTT message broker on the LAN is needed as well. The services that are hosted on premises need some HW to run on. In this project, an old raspberry PI is used for that purpose.
 
 ## Overview
 The picture says it all :-)
@@ -16,7 +16,7 @@ The picture says it all :-)
 ## Applications/Services 
 
 ### 1) MODBUS service for collecting solar power data
-The company that installed the solar panels refused to share an API key to the fusion solar service for fetching the production data as they had no more keys to share. It would have been the most smooth solution. They also refused to grant me installer rights so that I might enable the modbus on the PV dongle. Luckily, they did enable it for me. That done, this service was born for fetching power values by periodically reading two registers from the inverter and storing them in the MongoDb database.<br/>
+The company (Svea Solar) that installed the solar panels had no more API keys to share for accessing the fusion solar web-service. It would have been the most smooth solution for fetching the produced solar power. Luckily, the dongle on the power inverter (HUAWEI SUN2000 series) has MODBUS protocol implemented. But, the MODBUS is by default disabled and one needs to have installer rights to be able to enable it. Svea Solar refused to give me the installer rights, but they did enable the MODBUS for me. That done, this service was born for fetching power values by periodically reading two registers from the inverter and storing them in the MongoDb database.<br/>
 
 [Link to repo](https://github.com/Nordblom72/SUN2000-PV-modbus)
 
